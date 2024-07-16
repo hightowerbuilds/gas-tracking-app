@@ -1,0 +1,27 @@
+.titleHeading {
+    font-family: monospace;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.formListContainer {
+    display: inline-flex;
+    height: 70vh;
+    width: 100%;
+}
+
+.formContainer {
+    width: 40%;
+    height: 40vh;
+    border: 2px black solid;
+    margin: 3px;
+}
+
+.listContainer {
+    width: 60%;
+    height: 40vh;
+    border: 2px black solid;
+    margin: 3px;
+}
