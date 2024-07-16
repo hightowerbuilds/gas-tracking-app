@@ -15,7 +15,7 @@ export default function App() {
 
 
   const buttonHandler = () => {
-    setListState(dateState + priceState + gallonState)
+    setListState(dateState && priceState && gallonState)
   }
 
   return (
