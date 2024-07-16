@@ -10,8 +10,13 @@ export default function App() {
   const [dateState, setDateState] = useState(69)
   const [priceState, setPriceState] = useState(3.69)
   const [gallonState, setGallonState] = useState(14)
+  const [listState, setListState] = useState('list-text')
 
 
+
+  const buttonHandler = () => {
+    setListState(dateState + priceState + gallonState)
+  }
 
   return (
     <div>
@@ -47,7 +52,7 @@ export default function App() {
         />
         {gallonState}
         <br />
-        <button>submit form button</button>
+        <button onClick={buttonHandler}>submit form button</button>
 
 
         </div>
@@ -55,7 +60,7 @@ export default function App() {
         <div className='listContainer'>
        
         LIST
-
+        {listState}
         </div>
       </div>
 
