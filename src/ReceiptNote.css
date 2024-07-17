@@ -1,0 +1,6 @@
+.receiptContainer {
+    height: 2vh;
+    width: 97%;
+    border: 1px black dashed;
+    margin: 3px;
+}

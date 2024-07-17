@@ -1,21 +1,23 @@
 import { useState } from 'react'
 import './App.css'
+import ReceiptNote from './ReceiptNote'
 
 
 
 export default function App() {
 
 
-
-  const [dateState, setDateState] = useState(69)
   const [priceState, setPriceState] = useState(3.69)
   const [gallonState, setGallonState] = useState(14)
+
+  const [monthState, setMonthState] = useState(7)
+  const [yearState, setYearState] = useState(24)
+  const [dateState, setDateState] = useState(16)
+
   const [listState, setListState] = useState('list-text')
 
-
-
   const buttonHandler = () => {
-    setListState(dateState && priceState && gallonState)
+    setListState()
   }
 
   return (
@@ -26,15 +28,34 @@ export default function App() {
         <div className='formContainer'>
         
          
-        FORM
+       <h4 style={{fontFamily: 'monospace', fontSize: 20}}>Receipt Form</h4>
         <br />
+
         <input 
         type="number" 
-        placeholder='DATE' 
+        placeholder='MONTH (M)' 
+        value={monthState}
+        onChange={(e) => setMonthState(e.target.value)}
+        />
+  
+        <br />
+
+        <input 
+        type="number" 
+        placeholder='DAY (D)' 
         value={dateState}
         onChange={(e) => setDateState(e.target.value)}
         />
-        {dateState}{/*  MAY NEED TO SEPARATE INTO Mont Date Year */}
+      
+        <br />
+        <input 
+        type="number" 
+        placeholder='YEAR (YY)' 
+        value={yearState}
+        onChange={(e) => setYearState(e.target.value)}
+        />
+      
+        <br />
         <br />
         <input 
         type="text" 
@@ -44,6 +65,7 @@ export default function App() {
         />
         {priceState}
         <br />
+        <br />
         <input 
         type="text" 
         placeholder='GALLONS PURCHASED'
@@ -52,6 +74,7 @@ export default function App() {
         />
         {gallonState}
         <br />
+        <br />
         <button onClick={buttonHandler}>submit form button</button>
 
 
@@ -59,8 +82,10 @@ export default function App() {
 
         <div className='listContainer'>
        
-        LIST
+     <h4 style={{fontFamily: 'monospace', fontSize: 20}}>RECEIPT DATUMS</h4>
         {listState}
+        <ReceiptNote day={dateState} month={monthState} year={yearState} price={priceState} gallons={gallonState}/>
+
         </div>
       </div>
 
