@@ -1,5 +1,5 @@
 .receiptContainer {
-    height: 2vh;
+    height: fit-content;
     width: 97%;
     border: 1px black dashed;
     margin: 3px;
