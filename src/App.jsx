@@ -15,19 +15,64 @@ export default function App() {
   const [dateState, setDateState] = useState(16)
   const [listState, setListState] = useState('list-text')
   const [error, setError] = useState(null)
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     getData()
   }, [])
 
   const getData = async () => {
-    const { data } = await supabase.from('receipt-data').select()
+    const { data } = await supabase.from('receipt_data').select('*')
     setListState(data)
   }
 
+  async function createMessage(tableName, data){
 
+    try {
+      const { error } = await supabase.from(tableName).insert([data]);
+      if (error) throw error;
+      setIsLoading(false)
+      console.log('success');
+    } catch (error) {
+      setError('error')
+      console.log('error')
+    }
+  }
 
+  const rowData = {
+    day: dateState,
+    month: monthState,
+    year: yearState,
+    price: priceState,
+    quantity: gallonState,
+    total: totalState
+  }
 
+  const handleSubmit = async () => {
+    await createMessage('receipt_data', rowData);
+    getData();
+    setDateState(0)
+    setMonthState(0)
+    setYearState(0)
+    setPriceState(0)
+    setGallonState(0)
+    setTotalState(0)
+   
+  }
+
+  const renderReceiptList = () => {
+    return [...listState].map((element) => (
+      <ReceiptNote 
+      key={element.id}
+      day={element.day} 
+      month={element.month} 
+      year={element.year} 
+      price={element.price} 
+      gallons={element.quantity}
+      total={element.total}
+      />
+    ))
+  }
 
 {/**
   What needs to happen here? 
@@ -109,7 +154,7 @@ export default function App() {
         />
         ${totalState}
 
-        <button>submit form button</button>
+        <button onClick={handleSubmit}>submit form button</button>
 
 
         </div>
@@ -118,14 +163,7 @@ export default function App() {
        
      <h4 style={{fontFamily: 'monospace', fontSize: 20}}>RECEIPT DATUMS</h4>
         {console.log(listState)}
-        <ReceiptNote 
-        day={listState[0].day} 
-        month={listState[0].month} 
-        year={listState[0].year} 
-        price={listState[0].price} 
-        gallons={listState[0].quantity}
-        total={listState[0].total}
-        />
+       {renderReceiptList()}
         </div>
       </div>
 
