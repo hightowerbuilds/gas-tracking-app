@@ -4,3 +4,11 @@
     border: 1px black dashed;
     margin: 3px;
 }
+
+.receiptItem {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 3px;
+    border-bottom: 1px black dotted;
+}

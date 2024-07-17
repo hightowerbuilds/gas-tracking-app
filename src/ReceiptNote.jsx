@@ -4,7 +4,7 @@ export default function ReceiptNote(props) {
   return (
     <div className='receiptContainer'>
        
-    <p>
+    <p className='receiptItem'>
     {props.month}/{props.day}/{props.year}  ${props.price}/gal  {props.gallons}gal purchased
     </p> 
        
