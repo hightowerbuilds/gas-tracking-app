@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
-import ReceiptNote from './ReceiptNote'
-
+import ReceiptNote from './components/ReceiptNote'
+import supabase from './utils/supabase'
 
 
 export default function App() {
@@ -13,12 +13,35 @@ export default function App() {
   const [monthState, setMonthState] = useState(7)
   const [yearState, setYearState] = useState(24)
   const [dateState, setDateState] = useState(16)
-
   const [listState, setListState] = useState('list-text')
+  const [error, setError] = useState(null)
 
-  const buttonHandler = () => {
-    setListState()
+  useEffect(() => {
+    getData()
+  }, [])
+
+  const getData = async () => {
+    const { data } = await supabase.from('receipt-data').select()
+    setListState(data)
   }
+
+
+
+
+
+{/**
+  What needs to happen here? 
+
+  - we need the button to add all of this data into the table on Supabase
+  - then form must be refreshed
+  - the data must appear in the list section of the app using an entry component
+      that is mapped onto the page. this 'mapping' onto the page needs to 
+      account for future features like averages, totals per month, etc
+  - what else...
+
+  */}
+
+
 
   return (
     <div>
@@ -86,7 +109,7 @@ export default function App() {
         />
         ${totalState}
 
-        <button onClick={buttonHandler}>submit form button</button>
+        <button>submit form button</button>
 
 
         </div>
@@ -94,9 +117,15 @@ export default function App() {
         <div className='listContainer'>
        
      <h4 style={{fontFamily: 'monospace', fontSize: 20}}>RECEIPT DATUMS</h4>
-        {listState}
-        <ReceiptNote day={dateState} month={monthState} year={yearState} price={priceState} gallons={gallonState}/>
-
+        {console.log(listState)}
+        <ReceiptNote 
+        day={listState[0].day} 
+        month={listState[0].month} 
+        year={listState[0].year} 
+        price={listState[0].price} 
+        gallons={listState[0].quantity}
+        total={listState[0].total}
+        />
         </div>
       </div>
 
