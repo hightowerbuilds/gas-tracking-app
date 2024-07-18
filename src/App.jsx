@@ -7,13 +7,13 @@ import supabase from './utils/supabase'
 export default function App() {
 
 
-  const [priceState, setPriceState] = useState(3.69)
-  const [gallonState, setGallonState] = useState(14)
-  const [totalState, setTotalState] = useState(0.00)
-  const [monthState, setMonthState] = useState(7)
-  const [yearState, setYearState] = useState(24)
-  const [dateState, setDateState] = useState(16)
-  const [listState, setListState] = useState('list-text')
+  const [priceState, setPriceState] = useState()
+  const [gallonState, setGallonState] = useState()
+  const [totalState, setTotalState] = useState()
+  const [monthState, setMonthState] = useState()
+  const [yearState, setYearState] = useState()
+  const [dateState, setDateState] = useState()
+  const [listState, setListState] = useState('RECEIPT LIST')
   const [error, setError] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
 

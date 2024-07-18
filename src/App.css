@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    padding: 3px;
 }
 
 .formListContainer {
@@ -14,14 +15,15 @@
 
 .formContainer {
     width: 40%;
-    height: 40vh;
+    height: fit-content;
     border: 2px black solid;
     margin: 3px;
+    padding: 15px;
 }
 
 .listContainer {
     width: 60%;
-    height: 40vh;
+    height: fit-content;
     border: 2px black solid;
     margin: 3px;
 }
