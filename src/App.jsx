@@ -51,17 +51,29 @@ export default function App() {
   const handleSubmit = async () => {
     await createMessage('receipt_data', rowData);
     getData();
-    setDateState(0)
-    setMonthState(0)
-    setYearState(0)
-    setPriceState(0)
-    setGallonState(0)
-    setTotalState(0)
-   
+    setDateState()
+    setMonthState()
+    setYearState(24)
+    setPriceState(0.00)
+    setGallonState(0.00)
+    setTotalState(0.00)
+  
   }
+
+  const deleteReceipt = async (id) => {
+    try {
+      const {error} = await supabase.from('receipt_data').delete().eq('id', id);
+      if (error) throw error;
+      setListState(listState.filter((element) => element.id !== id));
+    } catch (error) {
+      console.error('Error deleting message', error.message);
+    }
+  }
+
 
   const renderReceiptList = () => {
     return [...listState].map((element) => (
+      <>
       <ReceiptNote 
       key={element.id}
       day={element.day} 
@@ -70,7 +82,11 @@ export default function App() {
       price={element.price} 
       gallons={element.quantity}
       total={element.total}
+      id={element.id}
       />
+      <button onClick={() => deleteReceipt(element.id)} >delete</button>
+      </>
+    
     ))
   }
 
