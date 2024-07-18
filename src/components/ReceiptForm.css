@@ -61,3 +61,27 @@
     width: 100%;
     font-size: 20px;
 }
+
+.priceInput {
+    background-color: darkslategray;
+    width: 100%;
+    font-size: 20px;
+}
+
+.quantityInput {
+    background-color: darkslategray;
+    width: 100%;
+    font-size: 20px;
+}
+
+.totalInput {
+    background-color: darkslategray;
+    width: 100%;
+    font-size: 20px;
+}
+
+.submitButton {
+    width: 100%;
+    background-color: darkslategray;
+    font-size: 20px;
+}

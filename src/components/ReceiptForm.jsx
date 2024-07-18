@@ -159,7 +159,7 @@ export default function ReceiptForm() {
           <br />
           <br />
 
-          <button onClick={handleSubmit}>submit form button</button>
+          <button className='submitButton' onClick={handleSubmit}>submit form</button>
           </div>
 
           <div className='listContainer'>
