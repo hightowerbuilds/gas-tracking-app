@@ -10,9 +10,9 @@ export default function App() {
   const [priceState, setPriceState] = useState()
   const [gallonState, setGallonState] = useState()
   const [totalState, setTotalState] = useState()
-  const [monthState, setMonthState] = useState()
-  const [yearState, setYearState] = useState()
-  const [dateState, setDateState] = useState()
+  const [monthState, setMonthState] = useState('mm')
+  const [yearState, setYearState] = useState(2024)
+  const [dateState, setDateState] = useState('dd')
   const [listState, setListState] = useState('RECEIPT LIST')
   const [error, setError] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
@@ -51,12 +51,12 @@ export default function App() {
   const handleSubmit = async () => {
     await createMessage('receipt_data', rowData);
     getData();
-    setDateState()
-    setMonthState()
-    setYearState(24)
-    setPriceState(0.00)
-    setGallonState(0.00)
-    setTotalState(0.00)
+    setDateState('day')
+    setMonthState('month')
+    setYearState(2024)
+    setPriceState(null)
+    setGallonState(null)
+    setTotalState(null)
   
   }
 
@@ -140,7 +140,7 @@ export default function App() {
         value={yearState}
         onChange={(e) => setYearState(e.target.value)}
         />
-        {monthState}/{dateState}/20{yearState}
+        {monthState}/{dateState}/{yearState}
         <br />
         <br />
 
@@ -150,7 +150,7 @@ export default function App() {
         value={priceState}
         onChange={(e) => setPriceState(e.target.value)}
         />
-        ${priceState}
+       
         <br />
         <br />
         
@@ -160,7 +160,7 @@ export default function App() {
         value={gallonState}
         onChange={(e) => setGallonState(e.target.value)}
         />
-        {gallonState} gallons
+      
         <br />
         <br />
 
@@ -170,7 +170,7 @@ export default function App() {
         value={totalState}
         onChange={(e) => {setTotalState(e.target.value)}}
         />
-        ${totalState}
+      
         <br />
         <br />
         <button onClick={handleSubmit}>submit form button</button>
