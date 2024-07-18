@@ -20,4 +20,9 @@
     background-color: maroon;
     color: white;
     padding: 3px;
+    transition: 500ms ease-in-out;
+}
+
+.deleteSymbol:hover{
+    background-color: orangered;
 }

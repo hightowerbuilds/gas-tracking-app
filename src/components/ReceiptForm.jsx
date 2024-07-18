@@ -14,7 +14,7 @@ export default function ReceiptForm() {
     const [listState, setListState] = useState('RECEIPT LIST')
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
-
+    const [viewToggle, setViewToggle] = useState(false)
 
     useEffect(() => {
         getData()
@@ -70,7 +70,14 @@ export default function ReceiptForm() {
           console.error('Error deleting message', error.message);
         }
       }
+
+      const handleViewToggle = () => {
+        setViewToggle(true)
+      }
     
+      const handleCloseToggle = () => {
+        setViewToggle(false)
+      }
     
       const renderReceiptList = () => {
         return [...listState].map((element) => (
@@ -92,8 +99,9 @@ export default function ReceiptForm() {
     return (
       <div>
         {console.log('im here')}
-       
+        <button onClick={handleViewToggle}></button>
         <div className='formListContainer'>
+         
         <div className='formContainer'>
         <h4 className='receiptFormHeading'>Receipt Form</h4>
   
@@ -164,9 +172,15 @@ export default function ReceiptForm() {
           </div>
 
           <div className='listContainer'>
-            <h4 className='receiptListHeading'>RECEIPTS</h4>
-           {renderReceiptList()}
+            { 
+            viewToggle 
+            ? <><h4 className='receiptListHeading'>RECEIPTS</h4> {renderReceiptList()} <button className='handleCloseView' onClick={handleCloseToggle}>close toggle</button></> 
+            : <button className='handleViewToggle' onClick={handleViewToggle}>OPEN RECEIPT LIST</button>
+            }
           </div>
+
+          
+
         </div>
       </div>
     )

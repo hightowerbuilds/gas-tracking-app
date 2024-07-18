@@ -23,11 +23,10 @@ export default function ReceiptNote(props) {
     </div>
     
     <p> 
-     
-
-      {confirmModal ? <div style={{ display: 'inline-flex'}}> {props.deleteButton} <button onClick={handleGoBack}>go back</button> </div> :  <button className='deleteSymbol' onClick={handleConfirm}>!</button>}
-     
-      {console.log(props.deleteButton)}
+      {
+      confirmModal 
+      ? <div style={{ display: 'inline-flex'}}> {props.deleteButton} <button onClick={handleGoBack}>go back</button> </div> 
+      :  <button className='deleteSymbol' onClick={handleConfirm}>!</button>}
     </p>
 
     </div> 
