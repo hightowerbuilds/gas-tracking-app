@@ -24,11 +24,17 @@
     color:  darkslategray;
 }
 
+.receiptFormHeading {
+    font-family: monospace;
+    font-size: 20px;
+}
+
 .listContainer {
     justify-content: flex-end;
     width: 80%;
     height: fit-content;
     border: 2px darkslategray solid;
+    border-radius: 1%;
     margin: 5px;
     font-size: 30px;
     font-family: monospace;
@@ -81,7 +87,16 @@
 }
 
 .submitButton {
-    width: 100%;
+    width: 40%;
+    border-radius: 2%;
     background-color: darkslategray;
     font-size: 20px;
+}
+
+.deleteButton {
+    background-color: darkslategray;
+    font-size: 12px;
+    font-family:fantasy;
+    color: maroon;
+    padding-bottom: -1px;
 }

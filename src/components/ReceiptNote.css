@@ -1,14 +1,18 @@
-.receiptContainer {
-    height: fit-content;
-    width: 97%;
-    margin: 3px;
-}
+
 
 .receiptItem {
-    display: flex;
-    width: fit-content;
-    justify-content: center;
+    display: inline-flex;
+    height: fit-content;
+    width: 97%;
+    justify-content: space-between;
     align-items: center;
     margin: 3px;
     border-bottom: 1px black dotted;
+}
+
+.gasDataFormat {
+    display: inline-flex;
+    width: 90%;
+    justify-content: space-between;
+
 }

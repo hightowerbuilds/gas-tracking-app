@@ -3,13 +3,19 @@ import './ReceiptNote.css'
 
 export default function ReceiptNote(props) {
   return (
-    <div className='receiptContainer'>
-    <p className='receiptItem'>
-    {props.month}/{props.day}/{props.year}  ${props.price}/g  {props.gallons}g/pur ${props.total}spent 
-    <p style={{ marginLeft: '5px'}}> 
+  
+    <div className='receiptItem'>
+
+    <div className='gasDataFormat'>
+      <p> {props.month}/{props.day}/{props.year}</p>
+      <p> {props.gallons}g @ ${props.price}/g = ${props.total} </p>
+    </div>
+    
+    <p> 
       {props.deleteButton}
     </p>
-    </p> 
-    </div>
+
+    </div> 
+    
   )
 }

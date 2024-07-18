@@ -83,7 +83,7 @@ export default function ReceiptForm() {
           price={element.price} 
           gallons={element.quantity}
           total={element.total}
-          deleteButton={<button onClick={() => deleteReceipt(element.id)}>delete</button>}
+          deleteButton={<button className='deleteButton' onClick={() => deleteReceipt(element.id)}>delete</button>}
           />
         ))
       }
@@ -95,7 +95,7 @@ export default function ReceiptForm() {
         <h2 className='titleHeading'>gas spending</h2>
         <div className='formListContainer'>
         <div className='formContainer'>
-        <h4 style={{fontFamily: 'monospace', fontSize: 20}}>Receipt Form</h4>
+        <h4 className='receiptFormHeading'>Receipt Form</h4>
   
           <input 
           className='monthInput'
