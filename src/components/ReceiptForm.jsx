@@ -83,7 +83,7 @@ export default function ReceiptForm() {
           price={element.price} 
           gallons={element.quantity}
           total={element.total}
-          deleteButton={<button onClick={() => deleteReceipt(element.id)} >delete</button>}
+          deleteButton={<button onClick={() => deleteReceipt(element.id)}>delete</button>}
           />
         ))
       }
