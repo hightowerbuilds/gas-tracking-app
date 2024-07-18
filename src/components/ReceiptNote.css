@@ -1,5 +1,4 @@
 
-
 .receiptItem {
     display: inline-flex;
     height: fit-content;
@@ -15,4 +14,10 @@
     width: 90%;
     justify-content: space-between;
 
+}
+
+.deleteSymbol {
+    background-color: maroon;
+    color: white;
+    padding: 3px;
 }
