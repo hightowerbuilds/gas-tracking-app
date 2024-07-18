@@ -8,7 +8,6 @@ export default function ReceiptNote(props) {
     {props.month}/{props.day}/{props.year}  ${props.price}/g  {props.gallons}g/pur ${props.total}spent 
 
     <p style={{ marginLeft: '5px'}}> 
-      
       {props.deleteButton}
     </p>
    

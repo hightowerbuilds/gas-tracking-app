@@ -1,28 +1,6 @@
-.titleHeading {
-    font-family: monospace;
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
+.ultimate {
+    background-color: #242424;
     width: 100%;
+    height: 100vh;
 }
 
-.formListContainer {
-    display: inline-flex;
-    height: 70vh;
-    width: 100%;
-}
-
-.formContainer {
-    width: 40%;
-    height: fit-content;
-    border: 2px black solid;
-    margin: 3px;
-    padding: 15px;
-}
-
-.listContainer {
-    width: 60%;
-    height: fit-content;
-    border: 2px black solid;
-    margin: 3px;
-}
