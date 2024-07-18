@@ -97,7 +97,7 @@ export default function App() {
         
          
        <h4 style={{fontFamily: 'monospace', fontSize: 20}}>Receipt Form</h4>
-        <br />
+      
 
         <input 
         type="number" 
@@ -153,7 +153,8 @@ export default function App() {
         onChange={(e) => {setTotalState(e.target.value)}}
         />
         ${totalState}
-
+        <br />
+        <br />
         <button onClick={handleSubmit}>submit form button</button>
 
 
