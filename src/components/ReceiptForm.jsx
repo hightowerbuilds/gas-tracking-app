@@ -3,7 +3,7 @@ import supabase from '../utils/supabase'
 import { useEffect, useState } from 'react'
 import ReceiptNote from '../components/ReceiptNote'
 
-export default function ReceiptForm(props) {
+export default function ReceiptForm() {
   
     const [priceState, setPriceState] = useState()
     const [gallonState, setGallonState] = useState()
