@@ -9,7 +9,7 @@ export default function ReceiptNote(props) {
 
     <p style={{ marginLeft: '5px'}}> 
       <button>edit</button>
-      
+      {props.deleteButton}
     </p>
    
     </p> 
