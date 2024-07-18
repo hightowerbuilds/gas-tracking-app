@@ -8,7 +8,7 @@ export default function ReceiptNote(props) {
 
     <div className='gasDataFormat'>
       <p> {props.month}/{props.day}/{props.year}</p>
-      <p> {props.gallons}g @ ${props.price}/g = ${props.total} </p>
+      <p> {props.gallons}g @ ${props.price} = ${props.total} </p>
     </div>
     
     <p> 
