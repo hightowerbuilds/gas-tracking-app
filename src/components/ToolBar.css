@@ -1,0 +1,6 @@
+.toolsContainer {
+    display: inline-flex;
+    width: 50%;
+    justify-content:space-evenly;
+    padding: 5px;
+}

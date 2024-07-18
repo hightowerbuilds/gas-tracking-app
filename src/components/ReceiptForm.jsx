@@ -92,7 +92,7 @@ export default function ReceiptForm() {
     return (
       <div>
         {console.log('im here')}
-        <h2 className='titleHeading'>gas spending</h2>
+       
         <div className='formListContainer'>
         <div className='formContainer'>
         <h4 className='receiptFormHeading'>Receipt Form</h4>
