@@ -88,14 +88,14 @@
     background-color: darkslategray;
     font-size: 12px;
     font-family: monospace;
-    color: maroon;
-    padding-bottom: -1px;
+    color: orangered;
+    margin-left: 2px;
 }
 
 .handleViewToggle{
     margin: 10px;
     background-color: seagreen;
-    color: aliceblue;
+    color: darkgray;
     padding: 5px;
     transition: 500ms ease-in-out;
 }
@@ -118,3 +118,8 @@
     color: black;
 }
 
+.editButton {
+    color: orange;
+    background-color: darkslategray;
+    font-family: monospace;
+}

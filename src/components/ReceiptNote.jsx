@@ -25,7 +25,7 @@ export default function ReceiptNote(props) {
     <p> 
       {
       confirmModal 
-      ? <div style={{ display: 'inline-flex'}}> {props.deleteButton} <button onClick={handleGoBack}>go back</button> </div> 
+      ? <div style={{ display: 'inline-flex', marginLeft: '5px'}}> {props.deleteButton} <button className='goBackButton' onClick={handleGoBack}>go back</button> </div> 
       :  <button className='deleteSymbol' onClick={handleConfirm}>!</button>}
     </p>
 

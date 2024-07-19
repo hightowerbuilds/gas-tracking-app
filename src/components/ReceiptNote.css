@@ -26,3 +26,9 @@
 .deleteSymbol:hover{
     background-color: orangered;
 }
+
+.goBackButton {
+    color: orange;
+    background-color: darkslategray;
+    font-family: monospace;
+}
