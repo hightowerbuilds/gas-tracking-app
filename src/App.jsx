@@ -5,7 +5,6 @@ import ReceiptForm from './components/ReceiptForm'
 import ToolBar from './components/ToolBar'
 
 
-
 export default function App() {
     
     return (
