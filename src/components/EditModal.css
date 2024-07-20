@@ -1,0 +1,20 @@
+.modalLayerOne {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalLayerTwo {
+    height: 60vh;
+    width: 30%;
+    background-color: darkcyan;
+    border-radius: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

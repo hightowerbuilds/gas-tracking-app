@@ -3,6 +3,7 @@ import supabase from '../utils/supabase'
 import { useEffect, useState } from 'react'
 import ReceiptNote from '../components/ReceiptNote'
 
+
 export default function ReceiptForm() {
   
     const [priceState, setPriceState] = useState()
@@ -99,6 +100,7 @@ export default function ReceiptForm() {
     return (
       <div>
         {console.log('im here')}
+       
         <button onClick={handleViewToggle}></button>
         <div className='formListContainer'>
          
