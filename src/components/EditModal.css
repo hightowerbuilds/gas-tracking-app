@@ -10,11 +10,32 @@
 }
 
 .modalLayerTwo {
-    height: 60vh;
+    margin: 0%;
+    height: 30vh;
     width: 30%;
     background-color: darkcyan;
     border-radius: 1%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+}
+
+.modalLayerTwoInputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.modalInput {
+    
+    margin-right: 5%;
+    width: 10vh;
+    height: 2vh;
+    margin: 0%;
+}
+
+.modalEditCloseButton {
+   
 }

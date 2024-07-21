@@ -188,7 +188,7 @@ export default function ReceiptForm() {
             }
           </div>
 
-          { editModal ? <EditModal closeButton={handleCloseEditModal}/>  : ''}
+          { editModal ? <EditModal closeButton={handleCloseEditModal}  priceState={priceState}/>  : ''}
 
         </div>
       </div>
