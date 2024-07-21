@@ -2,6 +2,7 @@ import './ReceiptForm.css'
 import supabase from '../utils/supabase'
 import { useEffect, useState } from 'react'
 import ReceiptNote from '../components/ReceiptNote'
+import EditModal from './EditModal'
 
 
 export default function ReceiptForm() {
@@ -16,6 +17,7 @@ export default function ReceiptForm() {
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
     const [viewToggle, setViewToggle] = useState(false)
+    const [editModal, setEditModal] = useState(false)
 
     useEffect(() => {
         getData()
@@ -79,6 +81,10 @@ export default function ReceiptForm() {
       const handleCloseToggle = () => {
         setViewToggle(false)
       }
+
+      const handleCloseEditModal = () => {
+        setEditModal(false)
+      }
     
       const renderReceiptList = () => {
         return [...listState].map((element) => (
@@ -91,7 +97,8 @@ export default function ReceiptForm() {
           price={element.price} 
           gallons={element.quantity}
           total={element.total}
-          deleteButton={<><button className='deleteButton' onClick={() => deleteReceipt(element.id)}> confirm delete</button><button className='editButton'>edit receipt</button></>
+          deleteButton={<><button className='deleteButton' onClick={() => deleteReceipt(element.id)}> confirm delete</button><button onClick={() => setEditModal(true)} className='editButton'>edit receipt</button></>
+          
         }
           />
         ))
@@ -100,7 +107,7 @@ export default function ReceiptForm() {
     return (
       <div>
         {console.log('im here')}
-       
+      
         <button onClick={handleViewToggle}></button>
         <div className='formListContainer'>
          
@@ -181,7 +188,7 @@ export default function ReceiptForm() {
             }
           </div>
 
-          
+          { editModal ? <EditModal closeButton={handleCloseEditModal}/>  : ''}
 
         </div>
       </div>

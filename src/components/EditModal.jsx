@@ -1,12 +1,13 @@
 import './EditModal.css'
 
-export default function EditModal() {
+export default function EditModal(props) {
   return (
     <div className='modalLayerOne'>
-        MODAL LAYER ONE
+      
 
         <div className='modalLayerTwo'>
-            MODAL LAYER TWO
+        <input type="text" />
+          <button onClick={props.closeButton}>close modal</button>
         </div>
     </div>
   )
