@@ -25,7 +25,6 @@ export default function ReceiptNote(props) {
   }
 
 
-
   return (
   
     <div className='receiptItem'>

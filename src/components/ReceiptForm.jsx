@@ -85,19 +85,24 @@ export default function ReceiptForm() {
       const handleCloseEditModal = () => {
         setEditModal(false)
       }
+
+      const handleOpenEditModal = () => {
+        setEditModal(true)
+      }
     
       const renderReceiptList = () => {
         return [...listState].map((element) => (
         
           <ReceiptNote 
           key={element.id}
+          editID={element.id}
           day={element.day} 
           month={element.month} 
           year={element.year} 
           price={element.price} 
           gallons={element.quantity}
           total={element.total}
-          deleteButton={<><button className='deleteButton' onClick={() => deleteReceipt(element.id)}> confirm delete</button><button onClick={() => setEditModal(true)} className='editButton'>edit receipt</button></>
+          deleteButton={<><button className='deleteButton' onClick={() => deleteReceipt(element.id)}> confirm delete</button><button onClick={handleOpenEditModal} className='editButton'>edit receipt</button></>
           
         }
           />
@@ -188,7 +193,7 @@ export default function ReceiptForm() {
             }
           </div>
 
-          { editModal ? <EditModal closeButton={handleCloseEditModal}  priceState={priceState}/>  : ''}
+          { editModal ? <EditModal closeButton={handleCloseEditModal} priceState={priceState} editID={listState[0].id}/>  : ''}
 
         </div>
       </div>
