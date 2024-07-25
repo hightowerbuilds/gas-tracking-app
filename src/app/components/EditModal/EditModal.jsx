@@ -1,5 +1,5 @@
 import './EditModal.css'
-import supabase from '../utils/supabase'
+import supabase from '../../../utils/supabase'
 import { useEffect, useState } from 'react'
 
 export default function EditModal(props) {

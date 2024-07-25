@@ -1,8 +1,8 @@
 import './ReceiptForm.css'
-import supabase from '../utils/supabase'
+import supabase from '../../../utils/supabase'
 import { useEffect, useState } from 'react'
-import ReceiptNote from '../components/ReceiptNote'
-import EditModal from './EditModal'
+import ReceiptNote from '../ReceiptNote/ReceiptNote'
+import EditModal from '../EditModal/EditModal'
 
 
 export default function ReceiptForm() {
@@ -56,9 +56,9 @@ export default function ReceiptForm() {
         setDateState('day')
         setMonthState('month')
         setYearState(2024)
-        setPriceState(null)
-        setGallonState(null)
-        setTotalState(null)
+        setPriceState('')
+        setGallonState('')
+        setTotalState('')
       
       }
     

@@ -1,8 +1,8 @@
 
 import './App.css'
-import Heading from './components/Heading'
-import ReceiptForm from './components/ReceiptForm'
-import ToolBar from './components/ToolBar'
+import Heading from './app/components/Heading/Heading'
+import ReceiptForm from './app/components/ReceiptForm/ReceiptForm'
+import ToolBar from './app/components/ToolBar'
 
 
 export default function App() {

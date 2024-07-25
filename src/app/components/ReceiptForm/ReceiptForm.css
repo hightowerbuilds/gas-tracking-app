@@ -10,6 +10,7 @@
     width: fit-content;
     height: fit-content;
     border: 2px darkslategray solid;
+    border-radius: 2%;
     margin: 3px;
     padding: 15px;
     font-size: 20px;
@@ -97,6 +98,7 @@
 .handleViewToggle{
     margin: 10px;
     background-color: seagreen;
+    border-radius: 2%;
     color: darkgray;
     padding: 5px;
     transition: 500ms ease-in-out;

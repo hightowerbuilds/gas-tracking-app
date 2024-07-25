@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './ReceiptNote.css'
-import EditModal from './EditModal'
+import EditModal from '../EditModal/EditModal'
 
 
 export default function ReceiptNote(props) {
