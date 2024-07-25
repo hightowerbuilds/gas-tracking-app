@@ -3,7 +3,6 @@ import supabase from '../../../utils/supabase'
 import { useEffect, useState } from 'react'
 import ReceiptNote from '../ReceiptNote/ReceiptNote'
 import EditModal from '../EditModal/EditModal'
-import EditSample from '../EditModal/EditSample'
 
 
 export default function ReceiptForm() {
@@ -11,9 +10,9 @@ export default function ReceiptForm() {
     const [priceState, setPriceState] = useState()
     const [gallonState, setGallonState] = useState()
     const [totalState, setTotalState] = useState()
-    const [monthState, setMonthState] = useState('mm')
+    const [monthState, setMonthState] = useState('month')
     const [yearState, setYearState] = useState(2024)
-    const [dateState, setDateState] = useState('dd')
+    const [dateState, setDateState] = useState('day')
     const [listState, setListState] = useState('RECEIPT LIST')
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
