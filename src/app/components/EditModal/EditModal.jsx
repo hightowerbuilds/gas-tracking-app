@@ -1,9 +1,13 @@
 import './EditModal.css'
 import supabase from '../../../utils/supabase'
 import { useEffect, useState } from 'react'
+import { changeText } from './editModalSlice.js'
+import { useSelector, useDispatch } from 'react-redux';
 
 export default function EditModal(props) {
 
+    const newText = useSelector((state) => state.editModal.value)
+    const dispatch = useDispatch()
     const [listState, setListState] = useState('RECEIPT LIST')
 
     useEffect(() => {
@@ -38,7 +42,8 @@ export default function EditModal(props) {
             </p>
       
             </div>
-       
+            {console.log(newText)}
+            <button onClick={() => dispatch(changeText())} >push it</button>
          
         </div>
     </div>

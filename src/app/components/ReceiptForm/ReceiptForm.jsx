@@ -3,6 +3,7 @@ import supabase from '../../../utils/supabase'
 import { useEffect, useState } from 'react'
 import ReceiptNote from '../ReceiptNote/ReceiptNote'
 import EditModal from '../EditModal/EditModal'
+import EditSample from '../EditModal/EditSample'
 
 
 export default function ReceiptForm() {
@@ -194,7 +195,7 @@ export default function ReceiptForm() {
           </div>
 
           { editModal ? <EditModal closeButton={handleCloseEditModal} priceState={priceState} editID={listState[0].id}/>  : ''}
-
+          
         </div>
       </div>
     )
